@@ -13,6 +13,13 @@ This is a code base for the famous snake game.
 
 - Score :construction:
 - mobile :construction:
+- eyes and tongue :construction:
+- grass :construction:
+
+## BUGS
+
+- strong borders :construction:
+
 
 [Certificate](https://certificates.digitalinnovation.one/15094BB0) :trophy:
 
