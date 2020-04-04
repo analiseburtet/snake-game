@@ -16,6 +16,7 @@ body {
     display: flex;
     justify-content: flex-end;
     width: 95vw;
+    height: 60px;
 }
 
 #score {
@@ -23,9 +24,24 @@ body {
     font-size: 20px;
 }
 
-.light {
+.light, .dark {
     background: gainsboro;
     border-radius: 50%;
     padding: 10px;
-    max-width: 34px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.light {
+    background-image: url(./img/brightness.png);
+}
+
+.dark {
+    background-image: url(./img/darkMode.png);
+    background-size: contain;
 }

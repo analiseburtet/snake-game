@@ -83,3 +83,18 @@ const iniciarJogo = () => {
 let jogo = setInterval(iniciarJogo, 100)
 
 document.addEventListener("keydown", update)
+
+// toggle theme
+const toggleTheme = () => {
+    let button = document.querySelectorAll("#theme div")
+    let body = document.getElementById("body")
+    if(button[0].className == "light"){
+        button[0].className = "dark"
+        body.style.backgroundColor = "white"
+        body.style.color = "black"
+    } else {
+        button[0].className = "light" 
+        body.style.backgroundColor = "black"
+        body.style.color = "white"
+    }
+}
