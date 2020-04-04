@@ -1,4 +1,5 @@
 let canvas = document.getElementById("snake")
+let score = document.getElementById("score")
 let context = canvas.getContext("2d")
 let box = 32
 let snake = []
@@ -66,7 +67,8 @@ const iniciarJogo = () => {
         snake.pop()
     }else {
         food.x = Math.floor(Math.random() * 15 + 1) * box,
-        food.y = Math.floor(Math.random() * 15 +1) * box
+        food.y = Math.floor(Math.random() * 15 +1) * box,
+        score.innerHTML = "Score: " + snake.length
     }
 
     let newHead = {
