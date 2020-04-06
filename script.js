@@ -48,7 +48,7 @@ const iniciarJogo = () => {
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo)
             let name = prompt("Please enter your name")
-            let totalScore = snake.length - 1
+            let totalScore = parseInt(snake.length - 1)
             setCookie(name, totalScore)
         }
     }
@@ -88,8 +88,8 @@ document.addEventListener("keydown", update)
 
 // create cookie for ranking
 
-const setCookie = (name, score) => {
-    document.cookie = "name" + "=" + name + ";" + "score" + "=" + score + ";" + "SameSite=Lax; Secure ; path=/;"
+const setCookie = (name, totalScore) => {
+    document.cookie = "name" + "=" + name + ";" + "score" + "=" + totalScore + ";" + "SameSite=Lax; Secure ; path=/;"
     var x = document.cookie;
     console.log(x)
 } 
