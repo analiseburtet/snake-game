@@ -1,5 +1,6 @@
 let canvas = document.getElementById("snake")
 let score = document.getElementById("score")
+let ranking = document.getElementById("ranking")
 let context = canvas.getContext("2d")
 let box = 32
 let snake = []
@@ -90,8 +91,7 @@ document.addEventListener("keydown", update)
 
 const setCookie = (name, totalScore) => {
     document.cookie = "name" + "=" + name + ";" + "score" + "=" + totalScore + ";" + "SameSite=Lax; Secure ; path=/;"
-    var x = document.cookie;
-    console.log(x)
+    ranking.innerHTML = document.cookie + "score"
 } 
 
 // toggle theme
