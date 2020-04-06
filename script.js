@@ -47,7 +47,9 @@ const iniciarJogo = () => {
     for(i = 1; i < snake.length; i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo)
-            alert("Game Over :(")
+            let name = prompt("Please enter your name")
+            let totalScore = snake.length - 1
+            setCookie(name, totalScore)
         }
     }
 
@@ -84,6 +86,14 @@ let jogo = setInterval(iniciarJogo, 100)
 
 document.addEventListener("keydown", update)
 
+// create cookie for ranking
+
+const setCookie = (name, score) => {
+    document.cookie = "name" + "=" + name + ";" + "score" + "=" + score + ";" + "SameSite=Lax; Secure ; path=/;"
+    var x = document.cookie;
+    console.log(x)
+} 
+
 // toggle theme
 const toggleTheme = () => {
     let button = document.querySelectorAll("#theme div")
@@ -98,3 +108,4 @@ const toggleTheme = () => {
         body.style.color = "white"
     }
 }
+  
