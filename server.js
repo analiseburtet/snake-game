@@ -31,8 +31,11 @@ const server = new Hapi.Server({
 
 async function liftOff () {  
   await server.register({
-    plugin: require('@hapi/inert'),
     plugin: require('@hapi/basic')
+  })
+
+  await server.register({
+    plugin: require('@hapi/inert')
   })
 
   await server.start()
@@ -84,4 +87,52 @@ server.route({
     handler: (request, h) => {
       return h.file('./img/darkMode.png')
     }
+})
+
+server.route({  
+  method: 'GET',
+  path: '/img/fruit.png',
+  handler: (request, h) => {
+    return h.file('./img/fruit.png')
+  }
+})
+
+server.route({  
+  method: 'GET',
+  path: '/img/favico.ico',
+  handler: (request, h) => {
+    return h.file('./img/favico.ico')
+  }
+})
+
+server.route({  
+  method: 'GET',
+  path: '/img/github.png',
+  handler: (request, h) => {
+    return h.file('./img/github.png')
+  }
+})
+
+server.route({  
+  method: 'GET',
+  path: '/img/linkedin.png',
+  handler: (request, h) => {
+    return h.file('./img/linkedin.png')
+  }
+})
+
+server.route({  
+  method: 'GET',
+  path: '/img/restart.png',
+  handler: (request, h) => {
+    return h.file('./img/restart.png')
+  }
+})
+
+server.route({  
+  method: 'GET',
+  path: '/img/playButton.png',
+  handler: (request, h) => {
+    return h.file('./img/playButton.png')
+  }
 })

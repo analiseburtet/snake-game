@@ -14,9 +14,13 @@ body {
 
 #theme {
     display: flex;
-    justify-content: flex-end;
-    width: 95vw;
-    height: 60px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 2px;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,.1);
+    align-items: center;
 }
 
 #snake {
@@ -28,17 +32,23 @@ body {
     font-size: 20px;
 }
 
-.light, .dark {
+.socialIcons {
+    display: flex;
+}
+
+.light, .dark, .social {
     background: gainsboro;
     border-radius: 50%;
-    padding: 10px;
-    width: 60px;
-    height: 60px;
+    padding: 2px;
+    margin: 5px;
+    width: 32px;
+    height: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 30px;
 }
 
 .light {
@@ -47,5 +57,4 @@ body {
 
 .dark {
     background-image: url(./img/darkMode.png);
-    background-size: contain;
 }

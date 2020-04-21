@@ -21,13 +21,17 @@ const criarBG = () => {
 
 const criarCobrinha = () => {
     for(i=0; i < snake.length; i++){
-        context.fillStyle = "green"
+        context.fillStyle = "darkgreen"
         context.fillRect(snake[i].x, snake[i].y, box, box)
     }
 }
 
+let apple = new Image()
+apple.src = '../img/fruit.png'
+
 const drawFood = () => {
-    context.fillStyle = "red"
+    let pattern = context.createPattern(apple, 'repeat')
+    context.fillStyle = pattern
     context.fillRect(food.x , food.y, box, box)
 }
 
@@ -39,7 +43,7 @@ const update = (event) => {
 }
 
 const iniciarJogo = () => {
-
+    
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0
     if(snake[0].x < 0 && direction == "left") snake[0].x = 16 * box
     if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0
@@ -48,8 +52,6 @@ const iniciarJogo = () => {
     for(i = 1; i < snake.length; i++){
         if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
             clearInterval(jogo)
-            let name = prompt("Please enter your name")
-            let totalScore = parseInt(snake.length - 1)
         }
     }
 
@@ -71,6 +73,7 @@ const iniciarJogo = () => {
         food.x = Math.floor(Math.random() * 15 + 1) * box,
         food.y = Math.floor(Math.random() * 15 +1) * box,
         score.innerHTML = "Score: " + snake.length
+        upgradeLevel()
     }
 
     let newHead = {
@@ -82,13 +85,21 @@ const iniciarJogo = () => {
 
 }
 
-let jogo = setInterval(iniciarJogo, 100)
-
 document.addEventListener("keydown", update)
+
+const upgradeLevel = () => {
+    //todo 
+}
+
+const showCanvas = () => {
+    let jogo = setInterval(iniciarJogo, 100)
+    let hide = document.getElementById('hide')
+    hide.style.display = 'none'
+}
 
 // toggle theme
 const toggleTheme = () => {
-    let button = document.querySelectorAll("#theme div")
+    let button = document.querySelectorAll("#theme div#bgColor")
     let body = document.getElementById("body")
     if(button[0].className == "light"){
         button[0].className = "dark"
