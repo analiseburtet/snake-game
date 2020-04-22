@@ -15,13 +15,13 @@ let food = {
 }
 
 const criarBG = () => {
-    context.fillStyle = "lightgreen"
+    context.fillStyle = "black"
     context.fillRect(0, 0, 16 * box, 16 * box)
 }
 
 const criarCobrinha = () => {
     for(i=0; i < snake.length; i++){
-        context.fillStyle = "darkgreen"
+        context.fillStyle = "white"
         context.fillRect(snake[i].x, snake[i].y, box, box)
     }
 }
@@ -70,10 +70,10 @@ const iniciarJogo = () => {
     if(snakeX != food.x || snakeY != food.y){
         snake.pop()
     }else {
+        let snakeLength
         food.x = Math.floor(Math.random() * 15 + 1) * box,
         food.y = Math.floor(Math.random() * 15 +1) * box,
         score.innerHTML = "Score: " + snake.length
-        upgradeLevel()
     }
 
     let newHead = {

@@ -21,14 +21,14 @@
             </div> 
             <div><h1>SNAKE GAME</h1></div>   
             <div class="socialIcons">
+                <div id="hide">
+                    <img onclick="showCanvas()" class="social" src="./img/playButton.png"/>
+                </div>
                 <img class="social" src="./img/restart.png"/>
                 <div id="bgColor" onclick="toggleTheme()" class="light"></div>
             </div>
         </div>
         <div>
-            <div id="hide">
-                <img onclick="showCanvas()" class="social" src="./img/playButton.png"/>
-            </div>
             <canvas id="snake" width="512" height="512"></canvas>
         </div>
         <div id="score">Score: 0</div>
