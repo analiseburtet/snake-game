@@ -13,6 +13,10 @@ Hope you enjoy, please open issues if :bug: found.
 - speed ups when snake eats 10 fruits; :heavy_check_mark:
 - score. :heavy_check_mark:
 
+## How to run 
+
+- just use your browser to open the index.html file and have fun.
+
 [Certificate](https://certificates.digitalinnovation.one/15094BB0) :trophy:
 
 [Click here to play it](https://analiseburtet.github.io/snake-game/) :video_game:
