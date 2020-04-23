@@ -1,7 +1,11 @@
 let canvas = document.getElementById("snake")
 let score = document.getElementById("score")
+let snakeFoodAlien = './img/alien.png'
 let ranking = document.getElementById("ranking")
 let context = canvas.getContext("2d")
+let snakeFoodFruit = './img/fruit.png'
+let grass = './img/grass.png'
+let space = './img/space.png'
 let box = 32
 let snake = []
 snake[0] = {
@@ -11,13 +15,18 @@ snake[0] = {
 let direction = "right"
 let jogo = null
 let gameMoveInterval = 100
+let maxScore = []
 let food = {
     x: Math.floor(Math.random() * 15 + 1) * box,
     y: Math.floor(Math.random() * 15 +1) * box
 }
 
+let canvasBg = new Image()
+canvasBg.src = space
+
 const criarBG = () => {
-    context.fillStyle = "black"
+    let pattern = context.createPattern(canvasBg, 'repeat')
+    context.fillStyle = pattern
     context.fillRect(0, 0, 16 * box, 16 * box)
 }
 
@@ -29,7 +38,7 @@ const criarCobrinha = () => {
 }
 
 let apple = new Image()
-apple.src = '../img/fruit.png'
+apple.src = snakeFoodAlien
 
 const drawFood = () => {
     let pattern = context.createPattern(apple, 'repeat')
@@ -77,7 +86,7 @@ const iniciarJogo = () => {
         }
         food.x = Math.floor(Math.random() * 15 + 1) * box,
         food.y = Math.floor(Math.random() * 15 +1) * box,
-        score.innerHTML = "Score: " + snake.length
+        score.innerHTML = snake.length
     }
 
     let newHead = {
@@ -105,18 +114,35 @@ const showCanvas = () => {
     hide.style.display = 'none'
 }
 
+const restart = () => {
+    location.reload();
+}
+
 // toggle theme
 const toggleTheme = () => {
     let button = document.querySelectorAll("#theme div#bgColor")
     let body = document.getElementById("body")
+    let scorePic = document.querySelector('.scorePic')
+    let scoreIcons = document.querySelector('.scoreIcons')
+    let theme = document.querySelector("#theme")
     if(button[0].className == "light"){
         button[0].className = "dark"
-        body.style.backgroundColor = "white"
-        body.style.color = "black"
+        body.style.backgroundImage = 'url("./img/grass.jpg")'
+        body.style.color = "white"
+        scorePic.src = snakeFoodFruit
+        scoreIcons.style.backgroundColor = 'black'
+        theme.style.backgroundColor = 'black'
+        apple.src = snakeFoodFruit
+        canvasBg.src = grass
     } else {
         button[0].className = "light" 
         body.style.backgroundColor = "black"
+        body.style.backgroundImage = 'unset'
         body.style.color = "white"
+        scorePic.src = snakeFoodAlien
+        apple.src = snakeFoodAlien
+        canvasBg.src = space
     }
 }
-  
+console.log(maxScore)
+document.querySelector('.maxScore').innerHTML = maxScore

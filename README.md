@@ -1,25 +1,20 @@
 #  :snake: Snake Game :snake:
 
-As the name already says, this repo has a snake game code. 
-I used javascript, node v12, hapi for authentication and routes.  
+Coded with javascript, CSS and HTML only. This game is an exercise to improve my programming skills. 
+Hope you enjoy, please open issues if :bug: found. 
 
 ## Features
 
 - use directions keys to play; :heavy_check_mark:
 - restart button; :heavy_check_mark:
 - play button; :heavy_check_mark:
-- random apples to be eaten; :heavy_check_mark:
-- dark and light mode; :heavy_check_mark:
+- random apples or aliens to be eaten; :heavy_check_mark:
+- dark and light theme; :heavy_check_mark:
+- speed ups when snake eats 10 fruits; :heavy_check_mark:
 - score. :heavy_check_mark:
 
-## Future Features 
-
-- login, authentication, sign up, sign out; :construction:
-- eyes and tongue for the snake; :construction:
-- grass during day, space during night, alien food in space; :construction:
-- speed up when upgrade level; :construction:
-- ranking. :construction:
-
 [Certificate](https://certificates.digitalinnovation.one/15094BB0) :trophy:
+
+[Click here to play it](https://analiseburtet.github.io/snake-game/) :video_game:
 
 made with :hearts:

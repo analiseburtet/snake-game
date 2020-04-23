@@ -4,37 +4,38 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="/css">
-        <link rel="icon" type="image/png" href="/img/favico.ico">
-        <script defer src="/script"></script>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="icon" type="image/png" href="./img/favico.ico">
+        <script defer src="./script/script.js"></script>
         <title>Snake Game</title>
     </head>
     <body id="body">
         <div id="theme">
             <div class="socialIcons">
                 <a href="https://github.com/analiseburtet/" target="_blank">
-                    <img class="social" src="./img/github.png"/>
+                    <img alt="perfil do github" class="social" src="./img/github.png"/>
                 </a>
                 <a href="https://www.linkedin.com/in/analise-burtet-a8040ba1/" target="_blank">
-                    <img class="social" src="./img/linkedin.png"/>
+                    <img alt="perfil do linkedin" class="social" src="./img/linkedin.png"/>
                 </a>
             </div> 
             <div><h1>SNAKE GAME</h1></div>   
             <div class="socialIcons">
                 <div id="hide">
-                    <img onclick="showCanvas()" class="social" src="./img/playButton.png"/>
+                    <img alt="clique para dar play" onclick="showCanvas()" class="social" src="./img/playButton.png"/>
                 </div>
-                <img class="social" src="./img/restart.png"/>
+                <img onclick="restart()" alt="clique para restartar o jogo" class="social" src="./img/restart.png"/>
                 <div id="bgColor" onclick="toggleTheme()" class="light"></div>
                 <a href="https://github.com/analiseburtet/snake-game/issues" target="_blank">
-                    <img class="social" src="./img/bug.png"/>
+                    <img alt="reportar bug" class="social" src="./img/bug.png"/>
                 </a>
             </div>
         </div>
         <div>
             <canvas id="snake" width="512" height="512"></canvas>
         </div>
-        <div id="score">Score: 0</div>
+        <div class="scoreIcons">
+            <img class="scorePic" src="./img/alien.png"/><div id="score">0</div></div> 
         <div id="ranking"></div>
     </body>
 </html>

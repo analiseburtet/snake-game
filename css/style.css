@@ -21,6 +21,7 @@ body {
     border-radius: 2px;
     box-shadow: 0 1px 10px 1px rgba(0,0,0,.1);
     align-items: center;
+    margin-bottom: 20px;
 }
 
 #snake {
@@ -30,9 +31,11 @@ body {
     box-shadow: 0 1px 10px 1px rgba(0,0,0,.1);
 }
 
-#score {
+#score,
+.maxScore {
     margin: 10px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .socialIcons {
@@ -55,9 +58,17 @@ body {
 }
 
 .light {
-    background-image: url(./img/brightness.png);
+    background-image: url(../img/brightness.png);
 }
 
 .dark {
-    background-image: url(./img/darkMode.png);
+    background-image: url(../img/darkMode.png);
+}
+
+.scoreIcons {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 2px;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,.1);
 }
