@@ -136,3 +136,11 @@ server.route({
     return h.file('./img/playButton.png')
   }
 })
+
+server.route({  
+  method: 'GET',
+  path: '/img/bug.png',
+  handler: (request, h) => {
+    return h.file('./img/bug.png')
+  }
+})

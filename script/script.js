@@ -9,6 +9,8 @@ snake[0] = {
     y: 8 * box
 }
 let direction = "right"
+let jogo = null
+let gameMoveInterval = 100
 let food = {
     x: Math.floor(Math.random() * 15 + 1) * box,
     y: Math.floor(Math.random() * 15 +1) * box
@@ -70,7 +72,9 @@ const iniciarJogo = () => {
     if(snakeX != food.x || snakeY != food.y){
         snake.pop()
     }else {
-        let snakeLength
+        if(snake.length % 10 === 0){
+            upgradeLevel()
+        }
         food.x = Math.floor(Math.random() * 15 + 1) * box,
         food.y = Math.floor(Math.random() * 15 +1) * box,
         score.innerHTML = "Score: " + snake.length
@@ -88,11 +92,15 @@ const iniciarJogo = () => {
 document.addEventListener("keydown", update)
 
 const upgradeLevel = () => {
-    //todo 
+    clearInterval(jogo)
+    gameMoveInterval = gameMoveInterval * 0.9
+    jogo = setInterval(iniciarJogo, gameMoveInterval) 
 }
 
 const showCanvas = () => {
-    let jogo = setInterval(iniciarJogo, 100)
+    if(!jogo) {
+        jogo = setInterval(iniciarJogo, gameMoveInterval)
+    }
     let hide = document.getElementById('hide')
     hide.style.display = 'none'
 }
