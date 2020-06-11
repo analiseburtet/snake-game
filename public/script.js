@@ -47,10 +47,22 @@ const drawFood = () => {
 }
 
 const update = (event) => {
-    if(event.keyCode == 37 && direction != "right") direction = "left"
-    if(event.keyCode == 38 && direction != "down") direction = "up"
-    if(event.keyCode == 39 && direction != "left") direction = "right"
-    if(event.keyCode == 40 && direction != "up") direction = "down"
+    if(event.keyCode == 37 && direction != "right") {
+        event.preventDefault() 
+        direction = "left"
+    }
+    if(event.keyCode == 38 && direction != "down") {
+        event.preventDefault() 
+        direction = "up"
+    }
+    if(event.keyCode == 39 && direction != "left"){
+        event.preventDefault() 
+        direction = "right"
+    } 
+    if(event.keyCode == 40 && direction != "up"){
+        event.preventDefault() 
+        direction = "down"
+    } 
 }
 
 const iniciarJogo = () => {
@@ -114,10 +126,6 @@ const showCanvas = () => {
     hide.style.display = 'none'
 }
 
-const restart = () => {
-    location.reload();
-}
-
 // toggle theme
 const toggleTheme = () => {
     let button = document.querySelectorAll("#theme div#bgColor")
@@ -125,12 +133,14 @@ const toggleTheme = () => {
     let scorePic = document.querySelector('.scorePic')
     let scoreIcons = document.querySelector('.scoreIcons')
     let theme = document.querySelector("#theme")
+    let chat = document.getElementById('chat')
     if(button[0].className == "light"){
         button[0].className = "dark"
         body.style.backgroundImage = 'url("./img/grass.jpg")'
         body.style.color = "white"
         scorePic.src = snakeFoodFruit
         scoreIcons.style.backgroundColor = 'black'
+        chat.style.backgroundColor = 'black'
         theme.style.backgroundColor = 'black'
         apple.src = snakeFoodFruit
         canvasBg.src = grass
@@ -144,5 +154,5 @@ const toggleTheme = () => {
         canvasBg.src = space
     }
 }
-console.log(maxScore)
+
 document.querySelector('.maxScore').innerHTML = maxScore

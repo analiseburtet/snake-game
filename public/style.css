@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body {
-    height: 95vh;
     width: 95;
     display: flex;
     justify-content: center;
@@ -22,6 +21,53 @@ body {
     box-shadow: 0 1px 10px 1px rgba(0,0,0,.1);
     align-items: center;
     margin-bottom: 20px;
+}
+
+.main {
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+}
+
+#chat {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 2px;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,.1);
+    padding: 15px;
+    height: 512px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+#chat input {
+    background: transparent;
+    color: #ffffff;
+    font-size: 18px;
+    border: 1px solid;
+    font-weight: bold;
+    padding: 8px;
+}
+
+#chat button {
+    background: transparent;
+    border: 1px solid;
+    color: #ffffff;
+    padding: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.messages {
+    border: 1px solid;
+    background: transparent;
+    height: 378px;
+    overflow-y: overlay;
+}
+
+.message {
+    padding: 8px;
 }
 
 #snake {

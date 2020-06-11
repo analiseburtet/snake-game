@@ -10,8 +10,12 @@ app.set('views', path.join(__dirname, 'public'))
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
 
-app.use('/', (req,res) => {
+app.get('/', (req,res) => {
     res.render('index.html')
+})
+
+app.get('/projetos', (req,res) => {
+    res.render('projetos.html')
 })
 
 let messages = []
